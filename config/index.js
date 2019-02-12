@@ -70,6 +70,8 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    //使用taro-ui的h5的配置项
+    esnextModules: ['taro-ui'],
     module: {
       postcss: {
         autoprefixer: {
