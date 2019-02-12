@@ -2,7 +2,7 @@
 	"miniprogramRoot": "dist/",
 	"projectname": "todo",
 	"description": "todo",
-	"appid": "touristappid",
+	"appid": "wxb0b456f2ca9c0512",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,

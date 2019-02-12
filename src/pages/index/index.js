@@ -3,6 +3,8 @@ import { View, Button, Text ,Input} from '@tarojs/components'
 import './index.styl'
 import ToItem from './ToItem'
 
+import { AtButton,AtAvatar } from 'taro-ui'
+
 export default class Index extends Component {
 
   config = {
@@ -52,8 +54,15 @@ export default class Index extends Component {
                    return <ToItem  key={item} content={item} index={index}  onhandleEmail={this.handleItemDele.bind(this)}/>
                 })}
             </ul>
+            <AtAvatar openData={{ type: 'userAvatarUrl'}}></AtAvatar>
+            <AtButton loading type='primary' onClick={this.toUrl}>跳转网页</AtButton>
       </View>
     )
+  }
+  toUrl(){
+    Taro.redirectTo({
+        url: '/pages/taro-ui/taro-ui'
+      })
   }
 
  handleInputChange(e){

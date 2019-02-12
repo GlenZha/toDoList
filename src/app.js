@@ -1,6 +1,9 @@
 import Taro, { Component } from '@tarojs/taro'
 import Index from './pages/index'
 
+// app.js
+import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
+
 import './app.styl'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -13,7 +16,8 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/index/index'
+      'pages/index/index',
+      'pages/taro-ui/taro-ui'
     ],
     window: {
       backgroundTextStyle: 'light',
