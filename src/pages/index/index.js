@@ -54,8 +54,10 @@ export default class Index extends Component {
                    return <ToItem  key={item} content={item} index={index}  onhandleEmail={this.handleItemDele.bind(this)}/>
                 })}
             </ul>
+            {/* 头像 */}
             <AtAvatar openData={{ type: 'userAvatarUrl'}}></AtAvatar>
             <AtButton loading type='primary' onClick={this.toUrl}>跳转网页</AtButton>
+            <AtButton loading type='primary' onClick={Taro.redirectTo}>AtDrawer抽屉</AtButton>
       </View>
     )
   }

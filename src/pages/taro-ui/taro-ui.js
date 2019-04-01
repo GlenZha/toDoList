@@ -1,15 +1,66 @@
 import Taro,{ Component } from "@tarojs/taro"
-import {View,Button,Text} from '@tarojs/components'
+import {View,Button,Text,Picker} from '@tarojs/components'
+//引入taro-ui
+import { AtButton } from 'taro-ui'
 
 export default class taroui extends Component{
     constructor(props){
         super(props)
-        this.state={
-        }
     }
+    state = {
+        selector: ['美国', '中国', '巴西', '日本'],
+        selectorChecked: '美国',
+        timeSel: '12:01',
+        dateSel: '2018-04-22'
+      }
+    onChange = e => {
+        this.setState({
+          selectorChecked: this.state.selector[e.detail.value]
+        })
+      }
+    onTimeChange = e => {
+        this.setState({
+          timeSel: e.detail.value
+        })
+      }
+      onDateChange = e => {
+        this.setState({
+          dateSel: e.detail.value
+        })
+      }
     render(){
         return (<View>
             <Text>这是taro-ui页面</Text>
+          <View className='page-section'>
+            <Text>地区选择器</Text>
+            <View>
+              <Picker mode='selector' range={this.state.selector} onChange={this.onChange}>
+                <View className='picker'>
+                  当前选择：{this.state.selectorChecked}
+                </View>
+              </Picker>
+            </View>
+          </View>
+          <View className='page-section'>
+            <Text>时间选择器</Text>
+            <View>
+              <Picker mode='time' onChange={this.onTimeChange}>
+                <View className='picker'>
+                  当前选择：{this.state.timeSel}
+                </View>
+              </Picker>
+            </View>
+          </View>
+          <View className='page-section'>
+            <Text>日期选择器</Text>
+            <View>
+              <Picker mode='date' onChange={this.onDateChange}>
+                <View className='picker'>
+                  当前选择：{this.state.dateSel}
+                </View>
+              </Picker>
+            </View>
+          </View>
         </View>)
     }
 }
